@@ -21,6 +21,11 @@
     "onLanguage:gcode"
   ],
   "main": "./dist/extension.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yapalexei/haas-gcode-tooltips.git"
+  },
+  "homepage": "https://github.com/yapalexei/haas-gcode-tooltips/blob/main/README.md",
   "contributes": {
     "languages": [
       {
