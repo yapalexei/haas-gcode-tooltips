@@ -1,0 +1,62 @@
+{
+  "name": "haas-gcode-tooltips",
+  "displayName": "Haas Gcode Tooltips",
+  "description": "NC (gcode) file helper tooltips. A tooltip will appear over a hovered gcode/mcode describing its function within an NC file.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Programming Languages", "Linters"
+  ],
+  "keywords": [
+    "gcode", "mcode", "nc", "haas", "tooltip"
+  ],
+  "activationEvents": [
+    "onLanguage:gcode"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "languages": [{
+      "id": "gcode",
+      "extensions": [".nc"]
+    }]
+  },
+  "galleryBanner": {
+    "color": "#5E0000",
+    "theme": "dark"
+  },
+  "preview": true,
+  "icon": "images/icon.png",
+  "scripts": {
+    "vscode:prepublish": "yarn run package",
+    "compile": "yarn run check-types && yarn run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "yarn run check-types && yarn run lint && node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.96.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "eslint": "^9.16.0",
+    "esbuild": "^0.24.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.7.2",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12"
+  }
+}
