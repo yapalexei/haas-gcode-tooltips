@@ -17,6 +17,7 @@
     "haas",
     "tooltip"
   ],
+  "publisher": "yapalexei",
   "activationEvents": [
     "onLanguage:gcode"
   ],
@@ -41,7 +42,7 @@
     "theme": "dark"
   },
   "preview": true,
-  "icon": "images/icon.png",
+  "icon": "images/icon.jpg",
   "license": "MIT",
   "scripts": {
     "vscode:prepublish": "yarn run package",
